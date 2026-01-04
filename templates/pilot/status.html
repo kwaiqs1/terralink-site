@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pilot Status - TerraLink AI{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold mb-4">Pilot Program Status</h1>
+        
+        {% if pilot %}
+        <div class="bg-gray-50 rounded-lg p-8 mb-8">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="text-4xl">🇰🇿</div>
+                <div>
+                    <h2 class="text-2xl font-bold">{{ pilot.location }}</h2>
+                    <p class="text-gray-600">{{ pilot.country }}</p>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-semibold">Progress</span>
+                    <span class="text-gray-600">{{ pilot.progress_percent }}%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                    <div class="bg-green h-4 rounded-full transition-all duration-500" style="width: {{ pilot.progress_percent }}%"></div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                    <p class="text-sm text-gray-600">Status</p>
+                    <p class="font-semibold">{{ pilot.get_status_display }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-600">Duration</p>
+                    <p class="font-semibold">{{ pilot.duration_months }} months</p>
+                </div>
+            </div>
+            
+            {% if pilot.description %}
+            <div class="mb-6">
+                <h3 class="font-semibold mb-2">Description</h3>
+                <p class="text-gray-700">{{ pilot.description|linebreaks }}</p>
+            </div>
+            {% endif %}
+            
+            {% if pilot.nda_notice %}
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                <p class="text-sm text-yellow-800">{{ pilot.nda_notice }}</p>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="text-center">
+            <a href="{% url 'contact' %}" class="bg-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/90 transition-colors inline-block">
+                Request a Demo / Pilot
+            </a>
+        </div>
+        {% else %}
+        <div class="text-center py-12">
+            <p class="text-gray-600 mb-8">Pilot information will be available soon.</p>
+            <a href="{% url 'contact' %}" class="bg-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/90 transition-colors inline-block">
+                Contact Us
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+

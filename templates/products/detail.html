@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ product.title }} - TerraLink AI{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <a href="{% url 'products:product_list' %}" class="text-green hover:underline mb-4 inline-block">← Back to Products</a>
+            <span class="inline-block bg-green/10 text-green px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                {{ product.get_status_display }}
+            </span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ product.title }}</h1>
+        <p class="text-xl text-gray-600 mb-8">{{ product.short_description }}</p>
+        
+        <div class="prose prose-lg max-w-none mb-12">
+            {{ product.long_description|linebreaks }}
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold mb-4">Features</h2>
+            <ul class="space-y-3">
+                {% for feature in product.features %}
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-green mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">{{ feature }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="{% url 'contact' %}?product={{ product.type }}" class="bg-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/90 transition-colors text-center">
+                Request a Demo
+            </a>
+            <a href="{% url 'pricing' %}" class="border-2 border-green text-green px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/10 transition-colors text-center">
+                View Pricing
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

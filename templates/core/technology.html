@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Technology - TerraLink AI{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold mb-4 text-center">Technology & Core Features</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div class="border-2 border-gray-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-3">Predictive AI</h3>
+                <p class="text-gray-600">Advanced machine learning models that predict plant stress and disease 7-14 days in advance.</p>
+            </div>
+            
+            <div class="border-2 border-gray-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-3">Early Detection</h3>
+                <p class="text-gray-600">Identify issues before visible symptoms appear, enabling proactive intervention.</p>
+            </div>
+            
+            <div class="border-2 border-gray-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-3">Recommendations Engine</h3>
+                <p class="text-gray-600">Get actionable, data-driven recommendations for crop management.</p>
+            </div>
+            
+            <div class="border-2 border-gray-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-3">Optional Drone Validation</h3>
+                <p class="text-gray-600">Validate AI predictions with high-resolution drone imagery and analysis.</p>
+            </div>
+            
+            <div class="border-2 border-gray-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-3">Dashboard</h3>
+                <p class="text-gray-600">Intuitive dashboard with risk heatmaps, alerts, and detailed analytics.</p>
+            </div>
+            
+            <div class="border-2 border-gray-200 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-3">Low-Input Precision Interventions</h3>
+                <p class="text-gray-600">Optimize resource use with targeted interventions based on AI insights.</p>
+            </div>
+        </div>
+        
+        <!-- Mock Dashboard UI -->
+        <div class="bg-gray-50 rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6">Dashboard Preview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white rounded-lg p-4 border border-gray-200">
+                    <p class="text-sm text-gray-600 mb-1">Active Alerts</p>
+                    <p class="text-3xl font-bold text-green">3</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-gray-200">
+                    <p class="text-sm text-gray-600 mb-1">Risk Zones</p>
+                    <p class="text-3xl font-bold text-accent">2</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-gray-200">
+                    <p class="text-sm text-gray-600 mb-1">Recommendations</p>
+                    <p class="text-3xl font-bold text-charcoal">5</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                <p class="text-sm text-gray-600 mb-2">Risk Heatmap</p>
+                <div class="h-48 bg-gradient-to-r from-green/20 via-accent/20 to-red/20 rounded flex items-center justify-center">
+                    <p class="text-gray-500">Heatmap visualization would appear here</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <a href="{% url 'contact' %}" class="bg-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/90 transition-colors inline-block">
+                Request a Demo
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

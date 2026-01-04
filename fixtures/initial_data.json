@@ -1,0 +1,98 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "title": "TerraLink Greenhouse AI",
+      "slug": "terralink-greenhouse-ai",
+      "short_description": "SaaS web application that analyzes microclimate data to predict plant stress and disease 7-14 days ahead, providing actionable recommendations and alerts.",
+      "long_description": "TerraLink Greenhouse AI is a comprehensive SaaS platform designed for modern greenhouse operations. Our AI-powered system analyzes microclimate data from sensors throughout your greenhouse to predict plant stress and disease before visible symptoms appear.\n\nKey capabilities include:\n- Real-time microclimate monitoring and analysis\n- Predictive analytics with 7-14 day forecasting\n- Intelligent recommendation engine for crop management\n- Automated alert system for critical issues\n- Optional integration with drone validation services\n- Comprehensive dashboard with risk heatmaps\n\nBuilt for scalability and designed to support precision agriculture practices with low-input interventions.",
+      "type": "ai",
+      "status": "pilot",
+      "features": [
+        "Analyzes microclimate data in real-time",
+        "Predicts plant stress and disease 7-14 days ahead",
+        "Recommendation engine for actionable insights",
+        "Automated alerts and notifications",
+        "Optional drone integration for validation",
+        "Interactive dashboard with risk heatmaps",
+        "Low-input precision intervention recommendations"
+      ],
+      "icon_svg": "<svg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='64' height='64' rx='8' fill='#1f7a3a' fill-opacity='0.1'/><path d='M32 20L40 28H36V44H28V28H24L32 20Z' fill='#1f7a3a'/><circle cx='32' cy='48' r='4' fill='#1f7a3a'/></svg>",
+      "order": 1,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "title": "TerraLink Drone Validator",
+      "slug": "terralink-drone-validator",
+      "short_description": "Drone service for visual validation of AI predictions, providing high-resolution imagery and additional data analysis.",
+      "long_description": "TerraLink Drone Validator is an optional service that complements our AI platform. When critical alerts are triggered, our drone service can be deployed to visually validate AI predictions.\n\nThe service includes:\n- High-resolution aerial imagery of greenhouse areas\n- Multi-spectral imaging for plant health analysis\n- Detailed validation reports\n- Integration with TerraLink Greenhouse AI platform\n- Professional drone operators and equipment\n\nThis service is available on-demand and provides an additional layer of verification for critical predictions, helping you make informed decisions with confidence.",
+      "type": "drone",
+      "status": "mvp",
+      "features": [
+        "High-resolution aerial imagery",
+        "Multi-spectral imaging for plant health",
+        "Visual validation of AI predictions",
+        "Detailed validation reports",
+        "Professional drone operators",
+        "Integration with AI platform"
+      ],
+      "icon_svg": "<svg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='64' height='64' rx='8' fill='#1f7a3a' fill-opacity='0.1'/><path d='M32 16L40 24H36V32H28V24H24L32 16Z' fill='#1f7a3a'/><ellipse cx='32' cy='40' rx='8' ry='4' fill='#1f7a3a'/></svg>",
+      "order": 2,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.pricingplan",
+    "pk": 1,
+    "fields": {
+      "name": "AI Subscription - Standard",
+      "category": "ai",
+      "price_range_text": "450,000 - 3,500,000 KZT / month",
+      "monthly_kzt_min": 450000,
+      "monthly_kzt_max": 3500000,
+      "details": "Subscription pricing varies based on greenhouse size, number of sensors, and feature set. Includes AI predictions, alerts, dashboard access, and email support.",
+      "is_pilot_eligible": true,
+      "order": 1,
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "products.pricingplan",
+    "pk": 2,
+    "fields": {
+      "name": "Drone Service - Per Deployment",
+      "category": "drone",
+      "price_range_text": "9,000,000 - 20,000,000 KZT per deployment",
+      "monthly_kzt_min": 9000000,
+      "monthly_kzt_max": 20000000,
+      "details": "Pricing varies based on greenhouse size, flight duration, and analysis complexity. Includes drone operation, imagery, analysis report, and integration with AI platform.",
+      "is_pilot_eligible": true,
+      "order": 1,
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "pilot.pilot",
+    "pk": 1,
+    "fields": {
+      "location": "Kazakhstan",
+      "country": "Kazakhstan",
+      "start_date": "2024-01-01",
+      "duration_months": 6,
+      "status": "active",
+      "progress_percent": 45,
+      "description": "Active pilot program testing TerraLink Greenhouse AI with select greenhouse operations. Program includes comprehensive monitoring, AI predictions, and validation services.",
+      "nda_notice": "Pilot location details are subject to NDA. Contact us for more information about pilot participation and results.",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  }
+]
+

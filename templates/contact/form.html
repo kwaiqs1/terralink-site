@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - TerraLink AI{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-gray-50 min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold mb-4">Get in Touch</h1>
+        <p class="text-xl text-gray-600 mb-8">
+            Interested in a pilot? Have questions? We'd love to hear from you.
+        </p>
+        
+        {% if messages %}
+        <div class="mb-6">
+            {% for message in messages %}
+            <div class="p-4 rounded-lg mb-4 {% if message.tags == 'error' %}bg-red-100 text-red-800{% else %}bg-green-100 text-green-800{% endif %}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <form method="post" enctype="multipart/form-data" class="bg-white rounded-lg shadow-lg p-8">
+            {% csrf_token %}
+            
+            <div class="mb-6">
+                <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                {{ form.name }}
+                {% if form.name.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ form.name.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="mb-6">
+                <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ form.email.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="mb-6">
+                <label for="{{ form.organization.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Organization</label>
+                {{ form.organization }}
+            </div>
+            
+            <div class="mb-6">
+                <label for="{{ form.product_interest.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Product Interest</label>
+                {{ form.product_interest }}
+            </div>
+            
+            <div class="mb-6">
+                <label for="{{ form.message.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                {{ form.message }}
+                {% if form.message.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ form.message.errors.0 }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="mb-6">
+                <label for="{{ form.file.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">Attach File (Optional)</label>
+                {{ form.file }}
+            </div>
+            
+            <!-- Honeypot field -->
+            {{ form.honeypot }}
+            
+            <button type="submit" class="w-full bg-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/90 transition-colors">
+                Send Message
+            </button>
+        </form>
+        
+        <div class="mt-8 text-center text-gray-600">
+            <p>Or email us directly at <a href="mailto:bekai4ik@gmail.com" class="text-green hover:underline">bekai4ik@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

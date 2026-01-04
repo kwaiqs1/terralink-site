@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}How It Works - TerraLink AI{% endblock %}
+
+{% block content %}
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-bold mb-4 text-center">How It Works</h1>
+        <p class="text-xl text-gray-600 mb-16 text-center max-w-3xl mx-auto">
+            Our four-step process from data collection to actionable insights
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">1</span>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">Data Input</h2>
+                <p class="text-gray-600">
+                    Collect microclimate data from sensors throughout your greenhouse. Our system integrates with existing monitoring equipment.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">2</span>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">AI Risk Analysis</h2>
+                <p class="text-gray-600">
+                    Our AI models analyze the data and predict plant stress and disease risks 7-14 days before visible symptoms appear.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">3</span>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">Optional Drone Validation</h2>
+                <p class="text-gray-600">
+                    For critical alerts, request our drone service to visually validate findings and provide additional data.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white text-3xl font-bold">4</span>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">Insights & Action</h2>
+                <p class="text-gray-600">
+                    Receive actionable recommendations, alerts, and a dashboard with risk heatmaps to guide your interventions.
+                </p>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+            <a href="{% url 'contact' %}" class="bg-green text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green/90 transition-colors inline-block">
+                Request a Pilot
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

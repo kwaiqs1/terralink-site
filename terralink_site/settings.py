@@ -148,13 +148,17 @@ CORS_ALLOWED_ORIGINS = config(
 
 # Security settings for production
 if not DEBUG:
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False  # VERY IMPORTANT for Railway
     SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = False
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
 
-# WhiteNoise settings
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.railway.app",
+]
+
+# WhiteNoise settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

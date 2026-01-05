@@ -158,6 +158,7 @@ if not DEBUG:
 
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://terralink.up.railway.app",
     "https://*.railway.app",
 ]
 

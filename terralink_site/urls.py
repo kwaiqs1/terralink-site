@@ -9,6 +9,9 @@ from django.views.generic import TemplateView
 from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap, ProductSitemap
 from products.views import pricing
+from django.urls import re_path
+from django.views.static import serve
+
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -31,4 +34,9 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+urlpatterns += [
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+]
 

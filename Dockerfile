@@ -12,7 +12,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
-COPY . .
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 # Collect static files
 RUN python manage.py collectstatic --noinput || true
@@ -21,5 +22,5 @@ RUN python manage.py collectstatic --noinput || true
 EXPOSE 8000
 
 # Run gunicorn
-CMD ["gunicorn", "terralink_site.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
 
+CMD ["/start.sh"]

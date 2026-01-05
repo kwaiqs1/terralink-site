@@ -3,6 +3,8 @@ set -euo pipefail
 
 cd /app
 
+mkdir -p /app/media
+
 echo "PORT is: ${PORT:-8000}"
 
 python manage.py migrate --noinput

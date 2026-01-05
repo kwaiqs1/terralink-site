@@ -6,6 +6,30 @@
 {% block content %}
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- ✅ NEW: Links cards (above Our Team) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="border-2 border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                <h2 class="text-lg font-bold mb-3">Innovation Video Link:</h2>
+                <a href="https://youtu.be/TGdzsFTVwhs?si=q_G-8pvgZ5MvHC6D"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-5 py-2 rounded-md bg-green text-white font-semibold hover:opacity-90 transition">
+                    Watch on YouTube
+                </a>
+            </div>
+
+            <div class="border-2 border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                <h2 class="text-lg font-bold mb-3">Our Instagram:</h2>
+                <a href="https://www.instagram.com/terralink_org?igsh=NzRrNDNnNG42eWVk"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-5 py-2 rounded-md bg-green text-white font-semibold hover:opacity-90 transition">
+                    Open Instagram
+                </a>
+            </div>
+        </div>
+
         <h1 class="text-4xl font-bold mb-4 text-center">Our Team</h1>
         <p class="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
             Meet the people behind TerraLink AI
@@ -52,4 +76,3 @@
     </div>
 </section>
 {% endblock %}
-
